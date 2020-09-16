@@ -11,4 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './global.css'
 
 const container = document.getElementById('app')
-ReactDOM.render(<Badge/>,container)
+ReactDOM.render(<Badge
+                  firsName="Ramos Garcia"
+                  lastName="Jeyson Gino"
+                  avatarUrl = "https://www.gravatar.com/avatar?id=identicon"
+                  jobTitle = "Junior Developer Web"
+                  twitter = "No tiwter"
+                  />,container)
