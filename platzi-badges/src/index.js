@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom'
 // import Badge from './components/Badge'
 
 // importamos la pagina
-import BadgeNew from './pages/BadgeNew'
+// import BadgeNew from './pages/BadgeNew'
+import Badges from './pages/Badges'
 
 // una vez instalado bootstrap atravez de npm lo importamos de forma defrente sin from ya que lo utilizaremos
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -14,4 +15,5 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './global.css'
 
 const container = document.getElementById('app')
-ReactDOM.render(<BadgeNew />,container)
+// ReactDOM.render(<BadgeNew />,container)
+ReactDOM.render(<Badges />,container)
