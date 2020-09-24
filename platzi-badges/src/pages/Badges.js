@@ -4,6 +4,9 @@ import React from 'react'
 import BadgesList from '../components/BadgesList'
 import './styles/Badges.css'
 import confLogo from '../images/badge-header.svg'
+
+// IMPORTAMOS LA PAGINA QUE NOS MOSTRARA EL LOADER MIENTRAS TRAEMOS LOS DATOS DE LA API
+import PageLoading from '../components/PageLoading'
 import api from '../api'
 
 // importamos el componente Link para las anclas y poder ais trabajar con el react-router
@@ -39,7 +42,8 @@ class Badges extends React.Component{
    render(){
       // comprobamos donde el estado del loading sea cierto
       if(this.state.loading === true){
-         return 'Loading...'
+         // mostramos el componente loading para dar una mejor esperiencia de usuario
+         return(<PageLoading />)
       }
 
       if(this.state.error){
