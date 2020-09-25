@@ -67,7 +67,15 @@ class BadgeForm extends React.Component{
                   <label htmlFor="">Twitter</label>
                   <input onChange={this.props.onChange} className="form-control" type="text" name="twitter" value={this.props.formValues.twitter}/>
                </div>
-               <button className="btn btn-primary">Save</button>
+               <div className="d-flex align-items-center gap-general">
+                  <button className="btn btn-primary">Save</button>
+                  {/* asemos una condicional que si existe el error que le pasamos en el prop me mostrara una ventanita de error */}
+                  {this.props.error && 
+                     <div className="mt-3 alert alert-danger mb-3" role="alert">
+                        {this.props.error.message}
+                     </div>
+                  }
+               </div>
             </form>
          </div>
       )

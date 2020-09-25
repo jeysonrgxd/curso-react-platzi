@@ -7,15 +7,23 @@ import header from '../images/platziconf-logo.svg';
 // import NavBar from '../components/NavBar';
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm'
+import Loader from '../components/Loader' 
+
 import api from '../api'
 
 
 
 class BadgeNew extends React.Component {
-   state = {form:{}}
+   state = {
+      loading:false,
+      error:false,
+      form:{}
+   }
 
    handleChange = e =>{
       this.setState({
+         loading:false,
+         error:false,
          form:{
             ...this.state.form,
             [e.target.name]:e.target.value
@@ -29,7 +37,7 @@ class BadgeNew extends React.Component {
       try {
          await api.badges.create(this.state.form)
          this.setState({ loading: true })
-         // cambias de pestaña o de pagina
+         // cambias de pestaña o de pagina, esto se logra ya que el router le pasa parametro a los props de que pagina nos encontramos
          this.props.history.push('/Badges')
 
       } catch (error) {
@@ -38,7 +46,14 @@ class BadgeNew extends React.Component {
    }
 
    render(){
-      
+      // esto es para que carge mientras hace la peticion de post del formulario
+
+      if (this.state.loading) {
+         console.log("se guardo");
+         return (
+            <Loader></Loader>
+         )
+      }
       return (
          <React.Fragment>
             <div className="BadgeNew__hero">
@@ -62,6 +77,7 @@ class BadgeNew extends React.Component {
                         onChange={this.handleChange} 
                         formValues={this.state.form}
                         onSubmit = {this.handleSubmit}
+                        error={this.state.error}
                      />
                   </div>
                </div>

@@ -20,7 +20,7 @@ class BadgesList extends React.Component {
       }
       return(
          <ul className="list-unstyled">
-            {this.props.badges.map(badge => {
+            {this.props.badges.reverse().map(badge => {
                return (
                   <li className="shadow p-3 mb-4 bg-white d-flex align-items-center" key={badge.id}>
                      <div>
