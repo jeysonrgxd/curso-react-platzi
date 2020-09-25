@@ -5,8 +5,9 @@ import BadgesList from '../components/BadgesList'
 import './styles/Badges.css'
 import confLogo from '../images/badge-header.svg'
 
-// IMPORTAMOS LA PAGINA QUE NOS MOSTRARA EL LOADER MIENTRAS TRAEMOS LOS DATOS DE LA API
+// IMPORTAMOS LA PAGINA QUE NOS MOSTRARA EL LOADER MIENTRAS TRAEMOS LOS DATOS DE LA API y La pagina de error
 import PageLoading from '../components/PageLoading'
+import PageError from '../components/PageError'
 import api from '../api'
 
 // importamos el componente Link para las anclas y poder ais trabajar con el react-router
@@ -47,7 +48,7 @@ class Badges extends React.Component{
       }
 
       if(this.state.error){
-         return `Error ${this.state.error}`
+         return (<PageError error={this.state.error}/>)
       }
       return(
          <React.Fragment>

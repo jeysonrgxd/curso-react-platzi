@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class BadgeForm extends React.Component{
 
    // inicializamos el state para poder manejar nuestra informacion de nuestro inputs y para poder tener solo una de via de guardado de nuestra informacion para que sea solo atravez de state
@@ -33,21 +34,19 @@ class BadgeForm extends React.Component{
    // })
    // }
 
-   handleClick = (e) => {
-      console.log("Button was clicked");
+   // handleClick = (e) => {
+   //    console.log("Button was clicked");
       
-   }
+   // }
    
-   handleSubmit = (e) => {
-      console.log("Form was submited");
-      console.log(this.state);
-      e.preventDefault()
-   }
+   // handleSubmit = async (e) => {
+   //    e.preventDefault()
+   // }
    render(){
       return(
          <div>
             <h1>New Attendant</h1>
-            <form action="" onSubmit={this.handleSubmit}>
+            <form action="" onSubmit={this.props.onSubmit}>
                <div className="form-group">
                   <label htmlFor="">Firs Name</label>
                   <input onChange={this.props.onChange} className="form-control" type="text" name="firstName" value={this.props.formValues.firstName}/>
@@ -68,7 +67,7 @@ class BadgeForm extends React.Component{
                   <label htmlFor="">Twitter</label>
                   <input onChange={this.props.onChange} className="form-control" type="text" name="twitter" value={this.props.formValues.twitter}/>
                </div>
-               <button  onClick={this.handleClick} className="btn btn-primary">Save</button>
+               <button className="btn btn-primary">Save</button>
             </form>
          </div>
       )

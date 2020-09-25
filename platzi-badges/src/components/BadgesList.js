@@ -1,11 +1,13 @@
 import React from 'react'
 import './styles/Badges.css'
 import {Link} from 'react-router-dom'
+import Grabatar from './Grabatar'
 
 // creamos este componente Por que BadgeList tiene una recursividad Unica y le pertenece
 class BadgesList extends React.Component {
    render(){
       // si los datos recibidos estan vacios enviamos el mensaje respectivo y lo invitamos a generar un nuevo badge
+      console.log(this.props);
       if(this.props.badges.length === 0){
          return(
             <div>
@@ -22,7 +24,9 @@ class BadgesList extends React.Component {
                return (
                   <li className="shadow p-3 mb-4 bg-white d-flex align-items-center" key={badge.id}>
                      <div>
-                        <img src={badge.avatarUrl} alt=""/>
+                        <Grabatar
+                           email={badge.email + badge.twitter}
+                           alt="Avatar" />
                      </div>
                      <div>
                         <p>{badge.firstName} {badge.lastName}</p>

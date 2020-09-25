@@ -8,6 +8,8 @@ import './styles/Badge.css'
 // traemos la imagen ya que es webpack la que ara que una vez importado la imagen ara la magia
 import confLogo from '../images/badge-header.svg'
 
+import Gravatar from './Grabatar'
+
 class Badge extends React.Component{
    // @override aplicamos el polimorfismos modificando la funcion render que eredamos de React.Component
    render(){
@@ -18,9 +20,9 @@ class Badge extends React.Component{
          </div>
 
          <div className="Badge__section-name">
-            <img 
+            <Gravatar 
                className = "Badge__avatar"
-               src={this.props.avatarUrl} 
+               email={this.props.email} 
                alt="Avatar" />
             <h1>{this.props.firstName} <br/> {this.props.lastName}</h1>
          </div>
