@@ -4,10 +4,10 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 // importamos las dos paginas que bamos a linkear con nuestro router
 import Layout from './Layout'
 import BadgeNew from '../pages/BadgeNew'
+import BadgeEdit from '../pages/BadgeEdit'
 import Badges from '../pages/Badges'
 import Home from '../pages/Home'
 import NotFound404 from '../pages/NotFound4040'
-
 /*
 Otra forma de hacer que todas tus URL’s que no existan sean redirigidas a tu componente de 404 sería de la siguiente forma:
 import { Redirect, Route } from "react-router-dom";
@@ -32,6 +32,8 @@ function App (){
             <Route exact path="/" component={Home}/>
             <Route exact path="/badges" component={Badges}/>
             <Route exact path="/badges/new" component={BadgeNew}/>
+            {/* usamos una ruta con un id */}
+            <Route exact path="/badges/:badgeId/edit" component={BadgeEdit}/>
             <Route component={NotFound404}/>
          </Switch>
       </Layout>

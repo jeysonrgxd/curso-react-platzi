@@ -5,3 +5,8 @@ li{
    border-radius: 10px !important;
    justify-content: space-evenly;
 }
+.badge-link{
+   width: 100%;
+   gap: 20px;
+   justify-content: center;
+}

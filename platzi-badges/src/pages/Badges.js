@@ -21,7 +21,15 @@ class Badges extends React.Component{
 
    componentDidMount () {
       this.fetchData()
+
+      // asemos un polling para recargar el estado asiendo denuevo la peticion y asi lograr mostrar un nuevo contenido si se registrado en el formulario
+      this.polling =setInterval(this.fetchData,5000)
    }
+
+   componentWillUnmount() {
+      clearInterval(this.polling)
+   }
+
 
    fetchData = async () =>{
       // reseto el loading y el error ya que are una peticion nueva
@@ -42,7 +50,7 @@ class Badges extends React.Component{
 
    render(){
       // comprobamos donde el estado del loading sea cierto
-      if(this.state.loading === true){
+      if(this.state.loading === true && !this.state.data){
          // mostramos el componente loading para dar una mejor esperiencia de usuario
          return(<PageLoading />)
       }

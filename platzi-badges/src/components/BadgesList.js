@@ -22,18 +22,20 @@ class BadgesList extends React.Component {
          <ul className="list-unstyled">
             {this.props.badges.reverse().map(badge => {
                return (
-                  <li className="shadow p-3 mb-4 bg-white d-flex align-items-center" key={badge.id}>
-                     <div>
-                        <Grabatar
-                           email={badge.email + badge.twitter}
-                           alt="Avatar" />
-                     </div>
-                     <div>
-                        <p>{badge.firstName} {badge.lastName}</p>
-                        <p>{badge.email}</p>
-                        <p>{badge.jobTitle}</p>
-                        <p>{badge.twitter}</p>
-                     </div>
+                  <li className="shadow p-3 mb-4 bg-white" key={badge.id}>
+                     <Link className="badge-link text-reset text-decoration-none d-inline-flex align-items-center" to={`/badges/${badge.id}/edit`}>
+                        <div>
+                           <Grabatar
+                              email={badge.email + badge.twitter}
+                              alt="Avatar" />
+                        </div>
+                        <div>
+                           <p>{badge.firstName} {badge.lastName}</p>
+                           <p>{badge.email}</p>
+                           <p>{badge.jobTitle}</p>
+                           <p>{badge.twitter}</p>
+                        </div>
+                     </Link>
                      
                   </li>
                )
