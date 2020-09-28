@@ -19,7 +19,8 @@ class Badges extends React.Component{
       data:[]
    }
 
-   componentDidMount () {
+   componentDidMount() {
+
       this.fetchData()
 
       // asemos un polling para recargar el estado asiendo denuevo la peticion y asi lograr mostrar un nuevo contenido si se registrado en el formulario
@@ -77,7 +78,7 @@ class Badges extends React.Component{
 
                <div className="Badges__list mt-5"> 
                   <div className="Badges__container">
-                     <BadgesList badges={this.state.data}/>
+                     <BadgesList loading={this.state.loading}  badges={this.state.data}/>
   
                   </div>
                </div>
