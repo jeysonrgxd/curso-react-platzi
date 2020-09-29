@@ -7,7 +7,6 @@ import confLogo from '../images/platziconf-logo.svg'
 import Modal from '../components/Modal.js'
 
 // creamos nuestra primer custoomHook
-
 function useIncreseCount(Max){
    // siempre obtenemos el useState que deseamos para despues retornarla
    const [count, setCount] = React.useState(0)
